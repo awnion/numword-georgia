@@ -1,14 +1,19 @@
 [tool.poetry]
 name = "numword-georgia"
-version = "0.2.0"
+version = "0.2.1"
 description = "Convert numbers to words in Georgian"
+license = "MIT"
 authors = ["Sergei Blinov <blinovsv@gmail.com>"]
+maintainers = ["Sergei Blinov <blinovsv@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "numword_georgia" }]
+homepage = "https://github.com/awnion/numword-georgia"
+repository = "https://github.com/awnion/numword-georgia"
+keywords = ["numword", "numbers", "georgia"]
+classifiers = ["Topic :: Software Development :: Libraries :: Python Modules"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^2.15.3"
