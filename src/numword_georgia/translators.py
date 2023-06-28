@@ -1,5 +1,7 @@
+# SPDX-FileCopyrightText: 2023-present Sergei Blinov <blinovsv@gmail.com>
+#
+# SPDX-License-Identifier: MIT
 # coding: utf-8
-__author__ = "awnion"
 
 BASE = {
     0: "ნულ",
@@ -89,12 +91,3 @@ def translate(number: int) -> str:
         result += _DA
 
     return result + BASE[n] + _I
-
-
-def main():
-    for number in [5909, 9999, 7000, 7707, 91]:
-        print(f"Number {number} is '{translate(number)}'")
-
-
-if __name__ == "__main__":
-    main()

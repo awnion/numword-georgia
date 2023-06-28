@@ -1,5 +1,7 @@
+# SPDX-FileCopyrightText: 2023-present Sergei Blinov <blinovsv@gmail.com>
+#
+# SPDX-License-Identifier: MIT
 # coding: utf-8
-__author__ = "awnion"
 
 import unittest
 
@@ -12,6 +14,9 @@ class MyTestCase(unittest.TestCase):
 
     def test16(self):
         self.assertEqual(translate(16), "თექვსმეტი")
+
+    def testminus16(self):
+        self.assertEqual(translate(-16), "მინუსი თექვსმეტი")
 
     def test20(self):
         self.assertEqual(translate(20), "ოცი")
@@ -86,8 +91,7 @@ class MyTestCase(unittest.TestCase):
     def test999999999(self):
         self.assertEqual(
             translate(999999999),
-            "ცხრაას ოთხმოცდაცხრამეტი მილიონ ცხრაას "
-            "ოთხმოცდაცხრამეტი ათას ცხრაას ოთხმოცდაცხრამეტი",
+            "ცხრაას ოთხმოცდაცხრამეტი მილიონ ცხრაას ოთხმოცდაცხრამეტი ათას ცხრაას ოთხმოცდაცხრამეტი",
         )
 
 

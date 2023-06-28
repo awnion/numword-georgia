@@ -1,4 +1,7 @@
 {
     "editor.formatOnSave": true,
     "python.formatting.provider": "black",
+    "[toml]": {
+        "editor.formatOnSave": false
+    }
 }
