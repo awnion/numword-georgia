@@ -24,8 +24,8 @@ jobs:
           python-version: "3.12"
 
       - name: Install pypa/setuptools
-        run: >-
-          python -m pip install hatch
+        run: |
+          python3 -m pip install hatch
           hatch build
 
       - name: Publish package distributions to PyPI
