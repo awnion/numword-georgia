@@ -36,8 +36,8 @@ dependencies = []
   Documentation = "https://github.com/awnion/numword-georgia/#readme"
   Homepage      = "https://github.com/awnion/numword-georgia"
   Issues        = "https://github.com/awnion/numword-georgia/issues"
-  Repository    = "https://github.com/awnion/numword-georgia"
-  Source        = "https://github.com/awnion/numword-georgia"
+  Repository    = "https://github.com/awnion/numword-georgia.git"
+  Source        = "https://github.com/awnion/numword-georgia.git"
 
 [tool.hatch.version]
 path = "src/numword_georgia/__about__.py"
