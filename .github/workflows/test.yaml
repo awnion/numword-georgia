@@ -1,6 +1,7 @@
 name: Test all targets
 
 on:
+  workflow_call:
   push:
     branches:
       - main
