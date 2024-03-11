@@ -1,0 +1,23 @@
+name: Test all targets
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pypi-publish:
+    name: Upload release to PyPI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
+
+      - name: Install pypa/setuptools
+        run: |
+          python3 -m pip install --user hatch
+          which hatch
+          hatch run all:test

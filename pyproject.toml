@@ -16,11 +16,10 @@ keywords = [
   "numbers",
   "georgia",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
@@ -61,7 +60,6 @@ dependencies = [
 
   [[tool.hatch.envs.all.matrix]]
   python = [
-    "3.7",
     "3.8",
     "3.9",
     "3.10",
