@@ -1,12 +1,18 @@
 [build-system]
-requires      = ["hatchling"]
-build-backend = "hatchling.build"
+requires = [
+  "uv_build>=0.12.13,<0.13.0",
+]
+build-backend = "uv_build"
 
 [project]
 name = "numword-georgia"
-dynamic = ["version"]
+version = "0.3.4"
 description = "Convert numbers to words in Georgian"
-license = "MIT"
+license = "MIT OR Apache-2.0"
+license-files = [
+  "LICENSE-MIT",
+  "LICENSE-APACHE",
+]
 authors = [
   { name = "Sergei Blinov", email = "blinovsv@gmail.com" },
 ]
@@ -16,13 +22,10 @@ keywords = [
   "numbers",
   "georgia",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
@@ -41,14 +44,12 @@ dependencies = []
   Repository    = "https://github.com/awnion/numword-georgia"
   Source        = "https://github.com/awnion/numword-georgia"
 
-[tool.hatch.version]
-path = "src/numword_georgia/__about__.py"
-
 [dependency-groups]
 dev = [
   "coverage[toml]>=6.5",
   "pytest",
   "ruff>=0.9",
+  "taplo",
   "ty",
 ]
 
@@ -117,28 +118,14 @@ line-length = 120
     ]
 
 [tool.ty.environment]
-python-version = "3.8"
+python-version = "3.11"
 
 [tool.coverage.run]
 source_pkgs = [
   "numword_georgia",
-  "tests",
 ]
 branch = true
-parallel = true
-omit = [
-  "src/numword_georgia/__about__.py",
-]
-
-[tool.coverage.paths]
-numword_georgia = [
-  "src/numword_georgia",
-]
-tests = ["tests"]
 
 [tool.coverage.report]
-exclude_lines = [
-  "no cov",
-  "if __name__ == .__main__.:",
-  "if TYPE_CHECKING:",
-]
+show_missing = true
+fail_under   = 100

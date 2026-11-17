@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2023-present Sergei Blinov <blinovsv@gmail.com>
 #
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: MIT OR Apache-2.0
 
 BASE = {
     0: "ნულ",

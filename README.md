@@ -41,12 +41,15 @@ The project is managed with [uv](https://docs.astral.sh/uv/).
 ```console
 uv sync                       # create the environment
 uv run pytest                 # run tests
+uv run coverage run -m pytest && uv run coverage report
 uv run --python 3.14 pytest   # run tests on a specific Python
 uv run ruff check .           # lint
 uv run ruff format .          # format
 uv run ty check               # type check
+uv run taplo fmt              # format TOML
 ```
 
 ## License
 
-`numword-georgia` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`numword-georgia` is distributed under the terms of either the [MIT](https://github.com/awnion/numword-georgia/blob/main/LICENSE-MIT) license or the
+[Apache License 2.0](https://github.com/awnion/numword-georgia/blob/main/LICENSE-APACHE), at your option.
