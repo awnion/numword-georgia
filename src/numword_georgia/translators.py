@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: 2023-present Sergei Blinov <blinovsv@gmail.com>
 #
 # SPDX-License-Identifier: MIT
-# coding: utf-8
 
 BASE = {
     0: "ნულ",
