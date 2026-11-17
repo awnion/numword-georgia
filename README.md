@@ -7,6 +7,7 @@
   - [Usage](#usage)
   - [Installation](#installation)
   - [Development](#development)
+  - [Changelog](#changelog)
   - [License](#license)
 
 ## Usage
@@ -21,11 +22,23 @@ for number in [5909, 9999, 7000, 7707, 91]:
 ```
 
 ```text
-Number 5909 is 'ხუთი ათას ცხრაას ცხრაი'
-Number 9999 is 'ცხრაი ათას ცხრაას ოთხმოცდაცხრამეტი'
+Number 5909 is 'ხუთი ათას ცხრაას ცხრა'
+Number 9999 is 'ცხრა ათას ცხრაას ოთხმოცდაცხრამეტი'
 Number 7000 is 'შვიდი ათასი'
 Number 7707 is 'შვიდი ათას შვიდას შვიდი'
 Number 91 is 'ოთხმოცდათერთმეტი'
+```
+
+Supported range is from `-10**15 + 1` to `10**15 - 1`, numbers outside of it raise `ValueError`.
+
+Any integral type is accepted: `int`, `bool`, `IntEnum`, numpy integers.
+Anything else, including floats and numeric strings, raises `TypeError`.
+
+```python
+translate(-16)  # 'მინუს თექვსმეტი'
+translate(2 * 10**9 + 5)  # 'ორი მილიარდ ხუთი'
+translate(10**15)  # ValueError: expected an integer between -10**15 + 1 and 10**15 - 1
+translate(3.7)  # TypeError: expected an integer
 ```
 
 ## Installation
@@ -48,6 +61,10 @@ uv run ruff format .          # format
 uv run ty check               # type check
 uv run taplo fmt              # format TOML
 ```
+
+## Changelog
+
+See [CHANGELOG.md](https://github.com/awnion/numword-georgia/blob/main/CHANGELOG.md).
 
 ## License
 

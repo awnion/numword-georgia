@@ -6,7 +6,7 @@ build-backend = "uv_build"
 
 [project]
 name = "numword-georgia"
-version = "0.3.4"
+version = "0.4.0"
 description = "Convert numbers to words in Georgian"
 license = "MIT OR Apache-2.0"
 license-files = [
@@ -38,6 +38,7 @@ classifiers = [
 dependencies = []
 
   [project.urls]
+  Changelog     = "https://github.com/awnion/numword-georgia/blob/main/CHANGELOG.md"
   Documentation = "https://github.com/awnion/numword-georgia/#readme"
   Homepage      = "https://github.com/awnion/numword-georgia"
   Issues        = "https://github.com/awnion/numword-georgia/issues"
@@ -47,6 +48,7 @@ dependencies = []
 [dependency-groups]
 dev = [
   "coverage[toml]>=6.5",
+  "numpy>=2.4.6",
   "pytest",
   "ruff>=0.9",
   "taplo",
@@ -119,6 +121,10 @@ line-length = 120
 
 [tool.ty.environment]
 python-version = "3.11"
+
+[tool.pytest.ini_options]
+addopts   = "--doctest-modules"
+testpaths = ["src", "tests"]
 
 [tool.coverage.run]
 source_pkgs = [
