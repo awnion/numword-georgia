@@ -4,7 +4,6 @@
 
 from enum import IntEnum
 
-import numpy as np
 import pytest
 
 from numword_georgia import translate
@@ -74,7 +73,7 @@ def test_translate(number: int, expected: str) -> None:
     assert translate(number) == expected
 
 
-@pytest.mark.parametrize("number", [3.7, 3.0, "12", None, np.float64(3.0)])
+@pytest.mark.parametrize("number", [3.7, 3.0, "12", None])
 def test_translate_rejects_non_integers(number: object) -> None:
     with pytest.raises(TypeError, match="expected an integer"):
         translate(number)  # ty: ignore[invalid-argument-type]
@@ -86,9 +85,6 @@ def test_translate_rejects_non_integers(number: object) -> None:
         (True, "ერთი"),
         (False, "ნული"),
         (IntEnum("Digit", {"NINE": 9}).NINE, "ცხრა"),
-        (np.int64(9), "ცხრა"),
-        (np.uint8(28), "ოცდარვა"),
-        (np.int8(-128), "მინუს ას ოცდარვა"),
     ],
 )
 def test_translate_accepts_integral_types(number: int, expected: str) -> None:

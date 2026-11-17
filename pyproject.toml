@@ -48,7 +48,7 @@ dependencies = []
 [dependency-groups]
 dev = [
   "coverage[toml]>=6.5",
-  "numpy>=2.4.6",
+  "numpy>=2.4.6; implementation_name == 'cpython'",
   "pytest",
   "ruff>=0.9",
   "taplo",

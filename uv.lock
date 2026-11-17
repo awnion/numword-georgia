@@ -316,8 +316,8 @@ source = { editable = "." }
 [package.dev-dependencies]
 dev = [
     { name = "coverage" },
-    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "numpy", version = "2.5.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' and implementation_name == 'cpython'" },
+    { name = "numpy", version = "2.5.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and implementation_name == 'cpython'" },
     { name = "pytest" },
     { name = "ruff" },
     { name = "taplo" },
@@ -329,7 +329,7 @@ dev = [
 [package.metadata.requires-dev]
 dev = [
     { name = "coverage", extras = ["toml"], specifier = ">=6.5" },
-    { name = "numpy", specifier = ">=2.4.6" },
+    { name = "numpy", marker = "implementation_name == 'cpython'", specifier = ">=2.4.6" },
     { name = "pytest" },
     { name = "ruff", specifier = ">=0.9" },
     { name = "taplo" },
